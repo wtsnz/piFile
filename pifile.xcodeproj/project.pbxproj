@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE34593D17BB61510037D0C2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = BE34593C17BB61510037D0C2 /* main.c */; };
 		BE34593F17BB61510037D0C2 /* pifile.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE34593E17BB61510037D0C2 /* pifile.1 */; };
+		BE34594617BB61640037D0C2 /* piqpr8.c in Sources */ = {isa = PBXBuildFile; fileRef = BE34594517BB61640037D0C2 /* piqpr8.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		BE34593917BB61510037D0C2 /* pifile */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pifile; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE34593C17BB61510037D0C2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		BE34593E17BB61510037D0C2 /* pifile.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = pifile.1; sourceTree = "<group>"; };
+		BE34594517BB61640037D0C2 /* piqpr8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = piqpr8.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		BE34593B17BB61510037D0C2 /* pifile */ = {
 			isa = PBXGroup;
 			children = (
+				BE34594517BB61640037D0C2 /* piqpr8.c */,
 				BE34593C17BB61510037D0C2 /* main.c */,
 				BE34593E17BB61510037D0C2 /* pifile.1 */,
 			);
@@ -118,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE34593D17BB61510037D0C2 /* main.c in Sources */,
+				BE34594617BB61640037D0C2 /* piqpr8.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

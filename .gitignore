@@ -1,0 +1,8 @@
+.DS_Store
+.Trashes
+DerivedData/
+xcuserdata
+
+// -- Dont upload the generated test files
+source-from-pi-file.txt
+out.pifile

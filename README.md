@@ -1,7 +1,7 @@
 piFile
 ======
 
-As soon as I came accross philipl/pifs I was mind blown by the concept. "Never worry about data again" I lol'd, yeah right.
+As soon as I came accross [philipl/pifs](https://github.com/philipl/pifs) I was mind blown by the concept. "Never worry about data again" I lol'd, yeah right.
 
 Then I carried on reading. I didn't know what a *normal* number was, or what a *disjunctive sequence* was. I read some more, blown away at the craziest thing I have ever read **"meaning that all possible finite sequences of digits will be present somewhere in it"**, wait what?!
 
@@ -12,7 +12,7 @@ Everything that *was*, everything that *is* and everything that **WILL BE**!
 ![alt text](http://www.reactiongifs.com/wp-content/uploads/2013/08/surprised.gif "AMAZED")
 
 
-If you havent already, go check out the amazing explanation/readme at philipl/pifs then come back.
+If you havent already, go check out the amazing explanation/readme at [philipl/pifs](https://github.com/philipl/pifs) then come back.
 
 
 I was fascinated, and very skeptical. There is no proof that pi is this magical number that hold the answers to life the universe and everything, but if it has these magical properties, I bet somewhere it will. It contains all files on your pc right now and all files that will ever be made (even the completed project you're hating at work right now!)
@@ -55,7 +55,7 @@ Current Performance
 ========
 
 Currently piFile just doubles the file size of the input (HA! You've read all this and now that bombshell!) so much for meta data!!!!
-Yes, but this can be improved. As per the philipl/pifs this is an experimental release and is not efficient at all. 
+Yes, but this can be improved. As per the [philipl/pifs](https://github.com/philipl/pifs) this is an experimental release and is not efficient at all. 
 
 
 The reason for this is that piFile currently searches pi for each and location of every byte of the source file and then saves that location, which is stored as a short (as 255 possible concurrent values reaches indexes in pi of <2000). And a short is two bytes. Things become a lot more efficient when you search for, say two bytes. I have some testing to do to make sure that all possible two byte combinations are sequential in the first < MAX_SHORT or another approach will have to be taken.

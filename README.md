@@ -1,7 +1,7 @@
 piFile
 ======
 
-As soon as I came accross [philipl/pifs](https://github.com/philipl/pifs) I was mind blown by the concept. "Never worry about data again" I lol'd, yeah right.
+As soon as I came across [philipl/pifs](https://github.com/philipl/pifs) I was mind blown by the concept. "Never worry about data again" I lol'd, yeah right.
 
 Then I carried on reading. I didn't know what a *normal* number was, or what a *disjunctive sequence* was. I read some more, blown away at the craziest thing I have ever read **"meaning that all possible finite sequences of digits will be present somewhere in it"**, wait what?!
 

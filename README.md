@@ -1,3 +1,12 @@
+Update
+-----
+Turns out the thought's I was having before uploading this were true. There is really no point as to so this as explained on http://stackoverflow.com/questions/11367844/can-any-finite-bit-string-be-found-in-pi-within-a-reasonable-amount-of-time
+
+The reason for this is that the index of PI for <file> will be around the same size(length) as the file itself (damn you information entropy!)
+
+Any way, it's an interesting concept non the less.
+
+
 piFile
 ======
 

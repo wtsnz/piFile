@@ -37,92 +37,62 @@
 
 unsigned char get_byte(int id);
 
-int main(int argc, const char * argv[])
-{
-    
-    printf("piFile\n");
-    
-    if ( argc < 3 ) /* argc should be 2 for correct execution */
-    {
-        printf("Invalid args, please read the readme and try again.");
-    }
-    else
-    {
-        
-        if (strcmp(argv[1], "-g") == 0) {
-            
-            // -- Generate file from .pifile
-            
-            printf("Generating file from .piFile\n");
-            
-            FILE *sourceFile = fopen( argv[2], "r" );
-            
-            FILE *destinationFile = fopen( argv[3], "wb+" );
-            
-            if (sourceFile == 0 || destinationFile == 0) {
-                
-                printf("There was an error opening files, please try agin, fool!");
-                
-            } else {
-                
-                short index = 10;
-                
-                while (fread(&index, sizeof(short), 1, sourceFile) == 1)
-                {
-                    char c = (char) get_byte(index);
-                    fwrite(&c, sizeof(char), 1, destinationFile);
-                }
-                
-                fclose(sourceFile);
-                fclose(destinationFile);
-                                
-            }
-            
-        } else {
-            
-            // -- Generate Meta Data File from normal file
-            
-            printf("Generating .piFile\n");
-            
-            FILE *sourceFile = fopen( argv[1], "r" );
-            
-            FILE *destinationFile = fopen( argv[2], "wb+" );
-            
-            if (sourceFile == 0 || destinationFile == 0) {
-                
-                printf("There was an error opening files, please try agin, fool!");
-                
-            } else {
-                
-                short c;
-                int i = 0;
-                
-                while ((c = fgetc(sourceFile)) != EOF)
-                {
-                    short index;
-                    
-                    for (index = 0; index < SHRT_MAX; index++) {
-                        
-                        if (get_byte(index) == c) {
-                            printf("Part %d - [pi %d]\t%d \n", i, index, c);
-                            break;
-                        }
-                    }
-                    
-                    fwrite(&index, sizeof(index), 1, destinationFile);
-                    
-                    i++;
-                }
-                
-                fclose(sourceFile);
-                fclose(destinationFile);
-                
-            }
-        }
-    }
-    
-    printf("Completed. Have fun now.");
-    
-    return 0;
-}
+int main(int argc, const char * argv[]){
+	printf("piFile\n");
+	
+	if ( argc < 3 ) { /* argc should be 3 or 4 for correct execution */
+		printf("Invalid args, please read the readme and try again.\n");
+		return 1;
+	}
 
+	FILE *sourceFile, *destinationFile;
+
+	if (strcmp(argv[1], "-g") == 0) {
+		// -- Generate file from .pifile
+		
+		printf("Generating file from .piFile\n");
+		
+		sourceFile = fopen( argv[2], "r" );
+		destinationFile = fopen( argv[3], "wb+" );
+		
+		if (sourceFile == 0 || destinationFile == 0) {
+			printf("There was an error opening files, please try agin, fool!\n");
+			return 1;
+		}
+		
+		short index = 10;
+		
+		while (fread(&index, sizeof(short), 1, sourceFile) == 1){
+			char c = (char) get_byte(index);
+			fwrite(&c, sizeof(char), 1, destinationFile);
+		}
+	} else {
+		// -- Generate Meta Data File from normal file
+		
+		printf("Generating .piFile\n");
+		
+		sourceFile = fopen( argv[1], "r" );
+		destinationFile = fopen( argv[2], "wb+" );
+		
+		if (sourceFile == 0 || destinationFile == 0) {
+			printf("There was an error opening files, please try agin, fool!\n");
+			return 1;
+		}
+
+		short c;
+		for (int i = 0; (c = fgetc(sourceFile)) != EOF; i++){
+			short index;
+			for (index = 0; index < SHRT_MAX; index++) if (get_byte(index) == c) {
+					printf("Part %d - [pi %d]\t%d \n", i, index, c);
+					break;
+			}
+			fwrite(&index, sizeof(index), 1, destinationFile);
+		}
+	}
+		
+	fclose(sourceFile);
+	fclose(destinationFile);
+	
+	printf("Completed. Have fun now.\n");
+	return 0;
+}
